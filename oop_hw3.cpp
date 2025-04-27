@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <cstdlib>
 
 using namespace std;
 
@@ -8,9 +7,9 @@ const int SIZE = 10;
 
 enum ItemType { COIN, ENEMY, HP, DEFENSE, ATTACK, EMPTY };
 
-struct Position {
+typedef struct  {
     int x, y;
-};
+} Position;
 
 class Item {
 public:
@@ -53,7 +52,7 @@ public:
         case HP: health += 3; break;
         case DEFENSE: defense += 3; break;
         case ATTACK: attack += 3; break;
-        case ENEMY: health -= (5 - defense / 2); break;
+        case ENEMY: health -= (5 - defense / 3); break;
         default: break;
         }
     }
